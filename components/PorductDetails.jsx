@@ -10,7 +10,7 @@ const ProductDetailsScreen = ({route}) => {
     <View style={{alignItems: 'center', marginTop: 20}}>
       <Image source={{uri: product.image}} style={{height: 200, width: 200}} />
       <Text style={{marginTop: 20, fontWeight: 'bold'}}>{product.title}</Text>
-      <Text style={{marginTop: 10, color: 'red'}}>{product.description}</Text>
+      <Text style={{color: 'red', padding: 30}}>{product.description}</Text>
       <Text
         style={{
           color: 'green',
