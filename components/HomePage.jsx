@@ -1,3 +1,5 @@
+// App.js
+
 import React, {useState, useEffect} from 'react';
 import {
   View,
@@ -28,8 +30,8 @@ export default function App() {
       });
   }, []);
 
-  const navigateToNextPage = item => {
-    navigation.navigate('Products', {product: item});
+  const navigateToProductDetails = product => {
+    navigation.navigate('Products', {product});
   };
 
   return (
@@ -43,11 +45,11 @@ export default function App() {
             data={products}
             keyExtractor={item => item.id.toString()}
             renderItem={({item}) => (
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigateToProductDetails(item)}>
                 <View style={styles.productContainer}>
                   <Image source={{uri: item.image}} style={styles.image} />
                   <View>
-                    <Text onPress={(text)=>navigateToNextPage(text)} style={styles.title}>{item.title}</Text>
+                    <Text style={styles.title}>{item.title}</Text>
                     <Text style={styles.price}>{item.price}</Text>
                   </View>
                 </View>
