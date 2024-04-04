@@ -11,7 +11,16 @@ const ProductDetailsScreen = ({route}) => {
       <Image source={{uri: product.image}} style={{height: 200, width: 200}} />
       <Text style={{marginTop: 20, fontWeight: 'bold'}}>{product.title}</Text>
       <Text style={{marginTop: 10, color: 'red'}}>{product.description}</Text>
-      <Text style={{color:"green", fontWeight:"bolod", fontSize:30}}>{product.price}</Text>
+      <Text
+        style={{
+          color: 'green',
+          fontWeight: 'bolod',
+          fontSize: 30,
+          marginTop: 10,
+        }}>
+        {' '}
+        ₹ {product.price}
+      </Text>
     </View>
   );
 };
